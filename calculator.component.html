@@ -1,0 +1,43 @@
+<div style="width:200px;height:200px;
+background-color: darkcyan;
+top:51%;
+
+position: absolute;
+right: 25%;">
+
+<div>
+    value1{{value1}}<input *ngIf='operator==" "' type="text"  value="{{value1}}">
+    
+    value2<input *ngIf='operator!=" " && result==0' type="text" 
+    (input)="value2=$event.target.value" value="{{value2}}">
+    
+    <input  *ngIf='result!=0' type="text" value="{{result}}">
+
+    
+   </div>
+   <button *ngFor="let i of [0,1,2,3]" (click)="setvalue(i)">{{i}}</button><br>
+   <button *ngFor="let i of [4,5,6,7]" (click)="setvalue(i)">{{i}}</button><br>
+   <button *ngFor="let i of [8,9]" (click)="setvalue(i)">{{i}}</button><br>
+    <!-- <div>
+    value2<input type="text" (input)="value2=$event.target.value">
+    value2=:{{value2}}
+</div> -->
+        <button (click)="setOperator('+')">+</button>
+        <button (click)="setOperator('-')">-</button>
+        <button (click)="setOperator('*')">*</button>
+        <button (click)="setOperator('/')">/</button>
+        <button (click)="calculate()">=</button>
+        
+
+    
+<!-- <div>
+    result<input type="text" value={{result}}>
+
+        </div> -->
+        
+        {{result}}
+    
+        {{value1}}
+
+</div>
+
